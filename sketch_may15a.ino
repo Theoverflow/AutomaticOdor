@@ -39,8 +39,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  if(receptionBT());
+  if(receptionBT()){};
   else{
     Serial.write('Error At : receptionBT');
   }
@@ -50,7 +49,7 @@ int receptionBT(){
   if (BTSerial.available()){
         state = (int)BTSerial.read();
         Serial.write(state);
-        if(controller());
+        if(controller()){};
         else {
           Serial.write('Error At : controller');
           return 0;
